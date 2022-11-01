@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Cli {
     private String name;
 
-    Cli(String name){
+    Cli(String name) {
         this.name = name;
     }
 
-    String getName(){
+    String getName() {
         return name;
     }
 
-    void setName(String name){
+    void setName(String name) {
         this.name = name;
     }
 
-    static void firstGreeting(){
+    static void firstGreeting() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("May I have your name?");
         String userName = scanner.next();
