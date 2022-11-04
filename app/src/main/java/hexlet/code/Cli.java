@@ -17,12 +17,13 @@ public class Cli {
         this.name = name;
     }
 
-    static void firstGreeting() {
+    static String firstGreeting() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         String userName = scanner.next();
-        scanner.close();
         var user =  new Cli(userName);
         System.out.println("Hello, " + user.getName() + "!");
+        return userName;
     }
 }
