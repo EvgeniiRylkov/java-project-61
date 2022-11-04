@@ -17,6 +17,7 @@ public class App {
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
+            System.out.println("5 - Progression");
             System.out.println("0 - Exit");
             chosenNumber = scanner.next();
             System.out.println("Your choice: " + chosenNumber);
