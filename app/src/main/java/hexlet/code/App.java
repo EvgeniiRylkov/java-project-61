@@ -16,10 +16,11 @@ public class App {
             System.out.println("1 - Greet");
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
+            System.out.println("4 - GCD");
             System.out.println("0 - Exit");
             chosenNumber = scanner.next();
             System.out.println("Your choice: " + chosenNumber);
-            System.out.println("");
+            System.out.println();
 
             if (chosenNumber.equals("1")) {
                 userName = firstGreeting();
