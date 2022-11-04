@@ -9,4 +9,4 @@
 > make run-dist
 
 ### Demo
-[![asciicast](https://asciinema.org/a/F7MnM5KW4eAhVpNuPZa6Ehe0b.svg)](https://asciinema.org/a/F7MnM5KW4eAhVpNuPZa6Ehe0b)
+[![asciicast](https://asciinema.org/a/OBM8d1TBfO0HEOXmq4ipU0b72.svg)](https://asciinema.org/a/OBM8d1TBfO0HEOXmq4ipU0b72)
