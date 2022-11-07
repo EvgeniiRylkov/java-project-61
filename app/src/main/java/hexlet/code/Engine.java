@@ -1,17 +1,14 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
 public class Engine {
     public static boolean startGame(String gameNumber) {
-        String question = null;
-        String answer = null;
-        String correctAnswer = null;
+        String question = "";
+        String answer = "";
+        String correctAnswer = "";
         boolean isCorrect = false;
         writeRules(gameNumber);
         int i = 0;
@@ -41,6 +38,11 @@ public class Engine {
                     correctAnswer = Progression.getCorrectAnswer(question);
                     isCorrect = checkAnswer(correctAnswer, answer);
                     break;
+                case "6":
+                    question = PrimeGame.askQuestion();
+                    answer = getUserAnswer();
+                    correctAnswer = PrimeGame.getCorrectAnswer(question);
+                    isCorrect = checkAnswer(correctAnswer, answer);
                 default:
                     break;
             }
@@ -70,6 +72,9 @@ public class Engine {
                 break;
             case "5":
                 System.out.println("What number is missing in the progression?");
+                break;
+            case "6":
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 break;
             default:
                 break;

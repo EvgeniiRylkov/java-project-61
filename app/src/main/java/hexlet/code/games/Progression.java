@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.sql.Array;
 import java.util.Random;
 
 public class Progression {
@@ -16,18 +15,18 @@ public class Progression {
         }
         int hiddenIndex = random.nextInt(arrayLength);
         stringsInProgression[hiddenIndex] = "..";
-        String question ="";
-        for (var stringInProgression :
-                stringsInProgression) {
-            question += stringInProgression + " ";
+        StringBuilder question = new StringBuilder();
+        for (var stringInProgression
+                : stringsInProgression) {
+            question.append(stringInProgression).append(" ");
         }
         System.out.println("Question: " + question);
-        return question;
+        return question.toString();
     }
 
     public static String getCorrectAnswer(String question) {
         String[] words = question.split("\\s");
-        int hiddenIndex =0;
+        int hiddenIndex = 0;
         int increment = 0;
         int result = 0;
         for (int i = 0; i < words.length - 1; i++) {
