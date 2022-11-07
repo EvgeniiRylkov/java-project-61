@@ -10,7 +10,7 @@ public class Engine {
         String answer;
         String correctAnswer;
         boolean isCorrect;
-        int timesToRepeat = 3;
+        final int timesToRepeat = 3;
         writeRules(gameNumber);
         int i = 0;
         do {

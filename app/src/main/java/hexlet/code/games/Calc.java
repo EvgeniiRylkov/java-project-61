@@ -5,7 +5,7 @@ import java.util.Random;
 public class Calc {
     public static String askQuestion() {
         Random random = new Random();
-        int upperLimit = 50;
+        final int upperLimit = 50;
         String[] mathOperations = {"+", "-", "*"};
         int number1 = random.nextInt(upperLimit);
         int number2 = random.nextInt(upperLimit);

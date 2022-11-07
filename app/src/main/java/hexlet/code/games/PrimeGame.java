@@ -5,7 +5,7 @@ import java.util.Random;
 public class PrimeGame {
     public static String askQuestion() {
         Random random = new Random();
-        int upperLimit = 1000;
+        final int upperLimit = 1000;
         int number = random.nextInt(upperLimit);
         System.out.println("Question: " + number);
         return Integer.toString(number);
@@ -25,6 +25,6 @@ public class PrimeGame {
                 break;
             }
         }
-        return  !isNotPrime;
+        return !isNotPrime;
     }
 }

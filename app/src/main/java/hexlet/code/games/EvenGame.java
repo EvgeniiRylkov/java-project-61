@@ -4,7 +4,7 @@ import java.util.Random;
 public class EvenGame {
     public static String askQuestion() {
         Random random = new Random();
-        int upperLimit = 50;
+        final int upperLimit = 50;
         int number = random.nextInt(upperLimit);
         System.out.println("Question: " + number);
         return Integer.toString(number);

@@ -5,9 +5,9 @@ import java.util.Random;
 public class Progression {
     public static String askQuestion() {
         Random random = new Random();
-        int upperLimit = 50;
-        int minLengthOfProgression = 5;
-        int additionLengthOfProgression = 5;
+        final int upperLimit = 50;
+        final int minLengthOfProgression = 5;
+        final int additionLengthOfProgression = 5;
         int startNumber = random.nextInt(upperLimit);
         int increment = random.nextInt(upperLimit);
         int arrayLength = random.nextInt(additionLengthOfProgression) + minLengthOfProgression;
