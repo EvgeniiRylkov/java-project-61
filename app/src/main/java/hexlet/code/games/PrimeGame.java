@@ -6,9 +6,8 @@ public class PrimeGame {
     public static String askQuestion() {
         Random random = new Random();
         int number = random.nextInt(1000);
-        String question = Integer.toString(number);
-        System.out.println("Question: " + question);
-        return question.toString();
+        System.out.println("Question: " + number);
+        return Integer.toString(number);
     }
 
     public static String getCorrectAnswer(String question) {
@@ -19,7 +18,7 @@ public class PrimeGame {
 
     static boolean isPrime(int number) {
         boolean isNotPrime = false;
-        for (int i = 2 ; i <= number / 2 ; i++) {
+        for (int i = 2; i <= number / 2; i++) {
             if (number % i == 0) {
                 isNotPrime = true;
                 break;

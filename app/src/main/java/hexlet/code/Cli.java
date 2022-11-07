@@ -8,15 +8,9 @@ public class Cli {
     Cli(String name) {
         this.name = name;
     }
-
     String getName() {
         return name;
     }
-
-    void setName(String name) {
-        this.name = name;
-    }
-
     static String firstGreeting() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");

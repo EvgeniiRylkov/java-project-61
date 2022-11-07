@@ -1,12 +1,16 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
 
 public class Engine {
     public static boolean startGame(String gameNumber) {
-        String question = "";
+        String question;
         String answer = "";
         String correctAnswer = "";
         boolean isCorrect = false;
