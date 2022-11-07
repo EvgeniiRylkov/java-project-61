@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-import hexlet.code.games.PrimeGame;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -14,6 +10,7 @@ public class Engine {
         String answer;
         String correctAnswer;
         boolean isCorrect;
+        int timesToRepeat = 3;
         writeRules(gameNumber);
         int i = 0;
         do {
@@ -23,7 +20,7 @@ public class Engine {
             isCorrect = checkAnswer(correctAnswer, answer);
             writeResult(isCorrect, correctAnswer, answer);
             i++;
-        } while (isCorrect & i < 3);
+        } while (isCorrect & i < timesToRepeat);
         return isCorrect;
     }
 
@@ -34,6 +31,7 @@ public class Engine {
             System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
         }
     }
+
     public static void writeRules(String gameNumber) {
         switch (gameNumber) {
             case "2":
@@ -56,23 +54,27 @@ public class Engine {
         }
 
     }
+
     public static String getUserAnswer() {
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next();
         System.out.println("Your answer: " + answer);
         return answer;
     }
-    public static  boolean checkAnswer(String correctAnswer, String answer) {
+
+    public static boolean checkAnswer(String correctAnswer, String answer) {
         return correctAnswer.equals(answer);
     }
-    static void  printCongratulation(boolean isWinner, String userName) {
+
+    static void printCongratulation(boolean isWinner, String userName) {
         if (isWinner) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
         }
     }
-    static  String askQuestion(String gameNumber) {
+
+    static String askQuestion(String gameNumber) {
         String question = "";
         switch (gameNumber) {
             case "2":
@@ -94,7 +96,8 @@ public class Engine {
         }
         return question;
     }
-    static  String getCorrectAnswer(String gameNumber, String question) {
+
+    static String getCorrectAnswer(String gameNumber, String question) {
         String correctAnswer = "";
         switch (gameNumber) {
             case "2":

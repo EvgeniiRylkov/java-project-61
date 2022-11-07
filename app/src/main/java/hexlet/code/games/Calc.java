@@ -5,10 +5,11 @@ import java.util.Random;
 public class Calc {
     public static String askQuestion() {
         Random random = new Random();
+        int upperLimit = 50;
         String[] mathOperations = {"+", "-", "*"};
-        int number1 = random.nextInt(50);
-        int number2 = random.nextInt(50);
-        String mathOperation = mathOperations[random.nextInt(3)];
+        int number1 = random.nextInt(upperLimit);
+        int number2 = random.nextInt(upperLimit);
+        String mathOperation = mathOperations[random.nextInt(mathOperations.length)];
         String question = number1 + " " + mathOperation + " " + number2;
         System.out.println("Question: " + question);
         return question;

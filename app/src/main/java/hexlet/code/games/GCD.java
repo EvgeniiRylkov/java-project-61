@@ -5,9 +5,10 @@ import java.util.Random;
 public class GCD {
     public static String askQuestion() {
         Random random = new Random();
-        int number1 = random.nextInt(50);
-        int number2 = random.nextInt(50);
-        String question = number1 + " " +  number2;
+        int upperLimit = 50;
+        int number1 = random.nextInt(upperLimit);
+        int number2 = random.nextInt(upperLimit);
+        String question = number1 + " " + number2;
         System.out.println("Question: " + question);
         return question;
     }

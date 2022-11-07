@@ -5,9 +5,12 @@ import java.util.Random;
 public class Progression {
     public static String askQuestion() {
         Random random = new Random();
-        int startNumber = random.nextInt(50);
-        int increment = random.nextInt(50);
-        int arrayLength = random.nextInt(5) + 5;
+        int upperLimit = 50;
+        int minLengthOfProgression = 5;
+        int additionLengthOfProgression = 5;
+        int startNumber = random.nextInt(upperLimit);
+        int increment = random.nextInt(upperLimit);
+        int arrayLength = random.nextInt(additionLengthOfProgression) + minLengthOfProgression;
         var stringsInProgression = new String[arrayLength];
         stringsInProgression[0] = Integer.toString(startNumber);
         for (int i = 1; i < arrayLength; i++) {
@@ -28,7 +31,7 @@ public class Progression {
         String[] words = question.split("\\s");
         int hiddenIndex = 0;
         int increment = 0;
-        int result = 0;
+        int result;
         for (int i = 0; i < words.length - 1; i++) {
             if (words[i].equals("..")) {
                 hiddenIndex = i;
