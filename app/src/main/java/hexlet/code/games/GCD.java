@@ -19,7 +19,7 @@ public class GCD {
         int min = Math.min(number1, number2);
         int max = Math.max(number1, number2);
         int result = 1;
-        for (int i = min; i >= 1; i--) {
+        for (int i = min; i >= 0; i--) {
             if (max % i == 0 & min % i == 0) {
                 result = i;
                 break;
