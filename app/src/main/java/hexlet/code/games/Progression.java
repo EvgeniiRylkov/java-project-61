@@ -42,6 +42,7 @@ public class Progression {
         for (int i = 0; i < words.length - 1; i++) {
             if (i != hiddenIndex & (i + 1) != hiddenIndex) {
                 increment = Integer.parseInt(words[i + 1]) - Integer.parseInt(words[i]);
+                break;
             }
         }
         // System.out.println("Increment is " + increment);
