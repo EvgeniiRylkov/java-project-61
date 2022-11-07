@@ -32,20 +32,20 @@ public class Progression {
         int hiddenIndex = 0;
         int increment = 0;
         int result;
-        for (int i = 0; i < words.length - 1; i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i].equals("..")) {
                 hiddenIndex = i;
                 break;
             }
         }
-        // System.out.println("HiddenIndex is " + hiddenIndex);
-        for (int i = 0; i < words.length - 1; i++) {
+        //System.out.println("HiddenIndex is " + hiddenIndex);
+        for (int i = 0; i < words.length; i++) {
             if (i != hiddenIndex & (i + 1) != hiddenIndex) {
                 increment = Integer.parseInt(words[i + 1]) - Integer.parseInt(words[i]);
                 break;
             }
         }
-        // System.out.println("Increment is " + increment);
+        //System.out.println("Increment is " + increment);
         if (hiddenIndex != 0) {
             result = Integer.parseInt(words[0]) + hiddenIndex * increment;
         } else {
