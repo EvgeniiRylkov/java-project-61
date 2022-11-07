@@ -11,45 +11,16 @@ import java.util.Scanner;
 public class Engine {
     public static boolean startGame(String gameNumber) {
         String question;
-        String answer = "";
-        String correctAnswer = "";
-        boolean isCorrect = false;
+        String answer;
+        String correctAnswer;
+        boolean isCorrect;
         writeRules(gameNumber);
         int i = 0;
         do {
-            switch (gameNumber) {
-                case "2":
-                    question = EvenGame.askQuestion();
-                    answer = getUserAnswer();
-                    correctAnswer = EvenGame.getCorrectAnswer(question);
-                    isCorrect = checkAnswer(correctAnswer, answer);
-                    break;
-                case "3":
-                    question = Calc.askQuestion();
-                    answer = getUserAnswer();
-                    correctAnswer = Calc.getCorrectAnswer(question);
-                    isCorrect = checkAnswer(correctAnswer, answer);
-                    break;
-                case "4":
-                    question = GCD.askQuestion();
-                    answer = getUserAnswer();
-                    correctAnswer = GCD.getCorrectAnswer(question);
-                    isCorrect = checkAnswer(correctAnswer, answer);
-                    break;
-                case "5":
-                    question = Progression.askQuestion();
-                    answer = getUserAnswer();
-                    correctAnswer = Progression.getCorrectAnswer(question);
-                    isCorrect = checkAnswer(correctAnswer, answer);
-                    break;
-                case "6":
-                    question = PrimeGame.askQuestion();
-                    answer = getUserAnswer();
-                    correctAnswer = PrimeGame.getCorrectAnswer(question);
-                    isCorrect = checkAnswer(correctAnswer, answer);
-                default:
-                    break;
-            }
+            question = askQuestion(gameNumber);
+            answer = getUserAnswer();
+            correctAnswer = getCorrectAnswer(gameNumber, question);
+            isCorrect = checkAnswer(correctAnswer, answer);
             writeResult(isCorrect, correctAnswer, answer);
             i++;
         } while (isCorrect & i < 3);
@@ -93,5 +64,56 @@ public class Engine {
     }
     public static  boolean checkAnswer(String correctAnswer, String answer) {
         return correctAnswer.equals(answer);
+    }
+    static void  printCongratulation(boolean isWinner, String userName) {
+        if (isWinner) {
+            System.out.println("Congratulations, " + userName + "!");
+        } else {
+            System.out.println("Let's try again, " + userName + "!");
+        }
+    }
+    static  String askQuestion(String gameNumber) {
+        String question = "";
+        switch (gameNumber) {
+            case "2":
+                question = EvenGame.askQuestion();
+                break;
+            case "3":
+                question = Calc.askQuestion();
+                break;
+            case "4":
+                question = GCD.askQuestion();
+                break;
+            case "5":
+                question = Progression.askQuestion();
+                break;
+            case "6":
+                question = PrimeGame.askQuestion();
+            default:
+                break;
+        }
+        return question;
+    }
+    static  String getCorrectAnswer(String gameNumber, String question) {
+        String correctAnswer = "";
+        switch (gameNumber) {
+            case "2":
+                correctAnswer = EvenGame.getCorrectAnswer(question);
+                break;
+            case "3":
+                correctAnswer = Calc.getCorrectAnswer(question);
+                break;
+            case "4":
+                correctAnswer = GCD.getCorrectAnswer(question);
+                break;
+            case "5":
+                correctAnswer = Progression.getCorrectAnswer(question);
+                break;
+            case "6":
+                correctAnswer = PrimeGame.getCorrectAnswer(question);
+            default:
+                break;
+        }
+        return correctAnswer;
     }
 }

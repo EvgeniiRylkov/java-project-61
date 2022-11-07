@@ -10,25 +10,24 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         var userName = "";
         String chosenNumber;
-        boolean isWinner = false;
+        boolean isWinner;
         boolean isGreeted = false;
         do {
             printList();
             chosenNumber = scanner.next();
             printConfirmation(chosenNumber);
-            System.out.println();
 
             if (chosenNumber.equals("1")) {
                 userName = firstGreeting();
                 isGreeted = true;
-            } else {
+            } else if (!chosenNumber.equals("0")) {
                 if (!isGreeted) {
                     userName = firstGreeting();
                     isGreeted = true;
                 }
                 isWinner = startGame(chosenNumber);
+                Engine.printCongratulation(isWinner, userName);
             }
-            printCongratulation(isWinner, userName);
         } while (!(chosenNumber.equals("0")));
         scanner.close();
     }
@@ -44,12 +43,6 @@ public class App {
     }
     static void printConfirmation(String chose) {
         System.out.println("Your choice: " + chose);
-    }
-    static void  printCongratulation(boolean isWinner, String userName) {
-        if (isWinner) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
-        }
+        System.out.println();
     }
 }
