@@ -1,9 +1,9 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 import static hexlet.code.Cli.firstGreeting;
 import static hexlet.code.Engine.startGame;
-
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -11,24 +11,21 @@ public class App {
         var userName = "";
         String chosenNumber;
         boolean isWinner;
-        boolean isGreeted = false;
-        do {
-            printList();
-            chosenNumber = scanner.next();
-            printConfirmation(chosenNumber);
-
-            if (chosenNumber.equals("1")) {
+        printList();
+        chosenNumber = scanner.next();
+        printConfirmation(chosenNumber);
+        switch (chosenNumber) {
+            case "1":
                 userName = firstGreeting();
-                isGreeted = true;
-            } else if (!chosenNumber.equals("0")) {
-                if (!isGreeted) {
-                    userName = firstGreeting();
-                    isGreeted = true;
-                }
+                break;
+            case "2", "3", "4", "5", "6":
+                userName = firstGreeting();
                 isWinner = startGame(chosenNumber);
                 Engine.printCongratulation(isWinner, userName);
-            }
-        } while (!(chosenNumber.equals("0")));
+                break;
+            default:
+                break;
+        }
         scanner.close();
     }
     static void printList() {
